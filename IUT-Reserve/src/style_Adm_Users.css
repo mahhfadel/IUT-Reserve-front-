@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    background-color: #FFFFFF;
+}
+
+a,
+a:hover,
+a:visited {
+    color: unset;
+    text-decoration: none;
+}
+
+header {
+    width: 1280px;
+    height: 121px;
+    left: 0px;
+    top: 0px;
+    background: #FFEF03;
+    align-items: center;
+}
+
+.iut-logo-container img {
+    position: absolute;
+    left: 1205px;
+    top: 33px;
+}
+
+.iut-logo-container h1 {
+    position: absolute;
+    width: 217px;
+    height: 48px;
+    left: 30px;
+    top: 37px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.iut-left h {
+    position: absolute;
+    width: 299px;
+    height: 24px;
+    left: 43px;
+    top: 151px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.iut-left h1 {
+    position: absolute;
+    width: 383px;
+    height: 115px;
+    left: 32px;
+    top: 188px;
+
+    background: #FFF128;
+    border-radius: 20px;
+}
+
+.iut-left h2 {
+    position: absolute;
+    width: 250px;
+    height: 82px;
+    left: 49px;
+    top: 205px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.left-img1 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 366px;
+    top: 214px;
+}
+
+.left-img2 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 366px;
+    top: 246px;
+}
+
+.iut-left1 h {
+    position: absolute;
+    width: 383px;
+    height: 115px;
+    left: 32px;
+    top: 336px;
+
+    background: #FFF128;
+    border-radius: 20px;
+}
+
+.iut-left1 h1 {
+    position: absolute;
+    width: 250px;
+    height: 82px;
+    left: 49px;
+    top: 353px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.left-img3 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 366px;
+    top: 362px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.left-img4 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 366px;
+    top: 394px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+
+}
+
+.iut-left2 h {
+    position: absolute;
+    width: 383px;
+    height: 115px;
+    left: 32px;
+    top: 484px;
+
+    background: #FFF128;
+    border-radius: 20px;
+}
+
+.iut-left2 h1 {
+    position: absolute;
+    width: 250px;
+    height: 82px;
+    left: 49px;
+    top: 501px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.left-img5 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 366px;
+    top: 510px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.left-img6 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 366px;
+    top: 542px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+
+}
+
+.iut-left2 h2 {
+    position: absolute;
+    width: 125px;
+    height: 24px;
+    left: 276px;
+    top: 615px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.iut-right h {
+    position: absolute;
+    width: 175px;
+    height: 24px;
+    left: 510px;
+    top: 151px;
+
+    white-space: nowrap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.iut-right h1 {
+    position: absolute;
+    width: 383px;
+    height: 115px;
+    left: 499px;
+    top: 188px;
+
+    background: #FFF128;
+    border-radius: 20px;
+}
+
+.iut-right h2 {
+    position: absolute;
+    width: 250px;
+    height: 82px;
+    left: 516px;
+    top: 205px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.right-img2 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 833px;
+    top: 258px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.iut-right1 h {
+    position: absolute;
+    width: 383px;
+    height: 115px;
+    left: 499px;
+    top: 336px;
+
+    background: #FFF128;
+    border-radius: 20px;
+}
+
+.iut-right1 h1 {
+    position: absolute;
+    width: 250px;
+    height: 82px;
+    left: 516px;
+    top: 353px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.right-img4 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 833px;
+    top: 406px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+
+}
+
+.iut-right2 h {
+    position: absolute;
+    width: 383px;
+    height: 115px;
+    left: 499px;
+    top: 484px;
+
+    background: #FFF128;
+    border-radius: 20px;
+}
+
+.iut-right2 h1 {
+    position: absolute;
+    width: 250px;
+    height: 82px;
+    left: 516px;
+    top: 501px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #383838;
+}
+
+.right-img6 {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 833px;
+    top: 554px;
+
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.iut-right2 h2 {
+    position: absolute;
+    width: 125px;
+    height: 24px;
+    left: 743px;
+    top: 615px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.iut-profile {
+    position: absolute;
+    width: 343px;
+    height: 630px;
+    left: 937px;
+    top: 121px;
+
+    background: #FFEF03;
+}
+
+.iut-profile-container h1 {
+    position: absolute;
+    width: 193px;
+    height: 28px;
+    left: 100px;
+    top: 50px;
+    white-space: nowrap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.iut-profile-container h2 {
+    position: absolute;
+    width: 193px;
+    height: 28px;
+    left: 100px;
+    top: 120px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.iut-profile-container h3 {
+    position: absolute;
+    width: 156px;
+    left: 100px;
+    top: 190px;
+    white-space: nowrap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    color: #000000;
+    background: #FFFFFF;
+    padding-right: 200px;
+    border-radius: 10px;
+}
+
+.iut-profile-container h4 {
+    position: absolute;
+    width: 193px;
+    height: 28px;
+    left: 100px;
+    top: 260px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.iut-profile-container h5 {
+    position: absolute;
+    width: 41px;
+    height: 30px;
+    right: 50px;
+    top: 570px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #FF0000;
+
+}
+
+.iut-delete {
+    position: absolute;
+    width: 1280px;
+    height: 750px;
+    left: 0px;
+    top: 0px;
+
+    background: rgba(20, 20, 20, 0.4);
+}
+
+.iut-delete h {
+    position: absolute;
+    width: 594px;
+    height: 227px;
+    left: 343px;
+    top: 247px;
+
+    background: #FFFDDE;
+    border-radius: 40px;
+}
+
+.iut-delete h1 {
+    position: absolute;
+    width: 333px;
+    height: 76px;
+    left: 473px;
+    top: 282px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+
+    color: #383838;
+}
+
+.iut-delete h2 {
+    position: absolute;
+    width: 333px;
+    height: 76px;
+    left: 473px;
+    top: 282px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+
+    color: #383838;
+}
+
+.iut-delete h3 {
+    position: absolute;
+    width: 179px;
+    height: 46px;
+    left: 449px;
+    top: 385px;
+    
+    background: #FFF128;
+    border-radius: 10px;
+}
+
+.iut-delete h4 {
+    position: absolute;
+    width: 179px;
+    height: 46px;
+    left: 652px;
+    top: 385px;
+    
+    background: #FFF128;
+    border-radius: 10px;
+}
+
+.iut-delete h5 {
+    position: absolute;
+    width: 37px;
+    height: 24px;
+    left: 520px;
+    top: 396px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #383838;
+}
+
+.iut-delete h6 {
+    position: absolute;
+    width: 33px;
+    height: 24px;
+    left: 725px;
+    top: 396px;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #383838;
+}
