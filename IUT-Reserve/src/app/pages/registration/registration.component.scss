@@ -50,28 +50,20 @@
 }
 
 .form-group {
-  margin-left: 0.5rem;
-
   h2 {
-    font-size: 2.25rem;
     font-weight: 900;
-    line-height: 4rem;
+    font-size: 2.5rem;
   }
   span {
-    font-size: 2.9rem;
-    font-weight: 900;
+    font-weight: 500;
+    font-size: 0.8rem;
   }
 
   mat-card {
     background: #ffef03;
     // border: none;
     box-shadow: none;
-    padding: 1.875rem 0 0 0;
-
-    .mat-card-title {
-      color: #383838;
-      margin-bottom: -0.5rem;
-    }
+    padding: 0;
 
     .form-wrapper {
       width: 16rem;
@@ -80,34 +72,17 @@
         width: 100%;
       }
 
-      .login-btn button {
+      .register-btn button {
         width: 100%;
       }
 
-      .login-btn button:enabled {
+      .register-btn button:enabled {
         background: #383838;
       }
 
-      .form-password {
+      .form-down {
         margin-top: -1.5rem;
       }
-    }
-  }
-}
-
-.creat-acount {
-  font-weight: 700;
-  font-size: 16px;
-
-  padding-top: 1.5rem;
-
-  .link-creat-acount {
-    display: flex;
-    justify-content: center;
-
-    a {
-      color: #383838;
-      text-decoration: none;
     }
   }
 }

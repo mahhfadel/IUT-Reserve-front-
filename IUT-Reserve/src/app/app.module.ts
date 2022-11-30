@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgMaterialModule } from './ng-material/ng-material.module';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, RegistrationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,133 @@
+<div class="background">
+  <div class="container">
+    <div class="logo">
+      <mat-icon svgIcon="iut-logo" class="icon"></mat-icon>
+    </div>
+    <div class="login">
+      <div class="form-group">
+        <h2>Criar Conta</h2>
+        <span>Sua Conta passará por uma pré aprovação!</span>
+        <div class="form">
+          <mat-card>
+            <mat-card-content>
+              <form
+                [formGroup]="form"
+                (ngSubmit)="saveDetails(form)"
+                autocomplete="off"
+                class="form-wrapper"
+              >
+                <!-- Name -->
+                <div class="form-name">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="text"
+                      formControlName="name"
+                      placeholder="Nome Completo"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <!-- Email -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="email"
+                      formControlName="email"
+                      placeholder="E-mail"
+                    />
+                    <mat-error
+                      *ngIf="form.controls['email'].errors?.['required']"
+                      >Email obrigatório</mat-error
+                    >
+                    <mat-error
+                      *ngIf="form.controls['email'].errors?.['pattern']"
+                      >Por favor insira um email válido.</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+
+                <!-- Password -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      [type]="flag ? 'password' : 'text'"
+                      placeholder="Senha"
+                      formControlName="password"
+                    />
+                    <mat-icon (click)="flag = !flag" matSuffix>{{
+                      flag ? "visibility" : "visibility_off"
+                    }}</mat-icon>
+                    <mat-error
+                      *ngIf="form.controls['password'].errors?.['minlength']"
+                    >
+                      Senha precisa possuir mais que 8 caracteres.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      [type]="flag ? 'password' : 'text'"
+                      placeholder="Confirmar Senha"
+                      formControlName="password"
+                    />
+                    <mat-icon (click)="flag = !flag" matSuffix>{{
+                      flag ? "visibility" : "visibility_off"
+                    }}</mat-icon>
+                    <mat-error
+                      *ngIf="form.controls['password'].errors?.['minlength']"
+                    >
+                      Senha precisa possuir mais que 8 caracteres.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Number -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="tel"
+                      formControlName="number"
+                      placeholder="Tefefone"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <!-- Company -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="text"
+                      formControlName="company"
+                      placeholder="Empresa"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <!-- Button Register -->
+                <div class="register-btn">
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                    [disabled]="!form.valid"
+                  >
+                    Registrar
+                  </button>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
