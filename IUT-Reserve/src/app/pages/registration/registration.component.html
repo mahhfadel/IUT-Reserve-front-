@@ -139,7 +139,7 @@
                 <div class="form-down">
                   <mat-form-field appearance="standard">
                     <mat-label>Grupo</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="company">
                       <mat-option>None</mat-option>
                       <mat-option
                         *ngFor="let company of companys"
@@ -147,6 +147,10 @@
                         >{{ company }}</mat-option
                       >
                     </mat-select>
+                    <mat-error
+                      *ngIf="form.controls['company'].errors?.['required']"
+                      >Grupo obrigatório
+                    </mat-error>
                   </mat-form-field>
                 </div>
 

@@ -44,6 +44,7 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: [null, [FormValidations.equalsTo('password')]],
 
       number: [null, [Validators.required, Validators.pattern('^[0-9]{11}$')]],
+      company: [null, [Validators.required]],
     });
   }
 
