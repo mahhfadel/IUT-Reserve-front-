@@ -1,0 +1,171 @@
+<div class="background">
+  <div class="container">
+    <div class="logo">
+      <mat-icon svgIcon="iut-logo" class="icon"></mat-icon>
+    </div>
+    <div class="login">
+      <div class="form-group">
+        <h2>Criar Conta</h2>
+        <span>Sua Conta passará por uma pré aprovação!</span>
+        <div class="form">
+          <mat-card>
+            <mat-card-content>
+              <form
+                [formGroup]="form"
+                (ngSubmit)="saveDetails(form)"
+                autocomplete="off"
+                class="form-wrapper"
+              >
+                <!-- Name -->
+                <div class="form-name">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="text"
+                      formControlName="name"
+                      placeholder="Nome Completo"
+                    />
+                    <mat-error
+                      *ngIf="form.controls['name'].errors?.['required']"
+                      >Nome obrigatório
+                    </mat-error>
+
+                    <mat-error
+                      *ngIf="form.controls['name'].errors?.['minlength']"
+                    >
+                      Nome precisa pelo menos 3 caracteres.
+                    </mat-error>
+                    <mat-error
+                      *ngIf="form.controls['name'].errors?.['pattern']"
+                    >
+                      O nome deve possuir apenas letras.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Email -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="email"
+                      formControlName="email"
+                      placeholder="E-mail"
+                    />
+                    <mat-error
+                      *ngIf="form.controls['email'].errors?.['required']"
+                      >Email obrigatório</mat-error
+                    >
+                    <mat-error
+                      *ngIf="form.controls['email'].errors?.['pattern']"
+                      >Por favor insira um email válido.</mat-error
+                    >
+                  </mat-form-field>
+                </div>
+
+                <!-- Password -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      [type]="flag ? 'password' : 'text'"
+                      placeholder="Senha"
+                      formControlName="password"
+                    />
+                    <mat-icon (click)="flag = !flag" matSuffix>
+                      {{ flag ? "visibility_off" : "visibility" }}
+                    </mat-icon>
+
+                    <mat-error
+                      *ngIf="form.controls['password'].errors?.['required']"
+                    >
+                      Senha obrigatória
+                    </mat-error>
+
+                    <mat-error
+                      *ngIf="form.controls['password'].errors?.['minlength']"
+                    >
+                      Senha precisa possuir mais que 8 caracteres.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      [type]="flagConfirm ? 'password' : 'text'"
+                      placeholder="Confirmar Senha"
+                      formControlName="confirmPassword"
+                    />
+                    <mat-icon (click)="flagConfirm = !flagConfirm" matSuffix>
+                      {{ flagConfirm ? "visibility_off" : "visibility" }}
+                    </mat-icon>
+
+                    <mat-error
+                      *ngIf="form.controls['confirmPassword'].errors?.['equalsTo']"
+                    >
+                      Senhas não correspondem.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Number -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <input
+                      matInput
+                      type="text"
+                      formControlName="number"
+                      placeholder="Telefone"
+                      mask="(00) 00000-0000"
+                    />
+
+                    <mat-error
+                      *ngIf="form.controls['number'].errors?.['required']"
+                      >Telefone obrigatório
+                    </mat-error>
+
+                    <mat-error
+                      *ngIf="form.controls['number'].errors?.['pattern']"
+                    >
+                      Por favor insira um telefone válido.
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <!-- Company -->
+                <div class="form-down">
+                  <mat-form-field appearance="standard">
+                    <mat-label>Grupo</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option
+                        *ngFor="let company of companys"
+                        [value]="company"
+                        >{{ company }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <!-- Button Register -->
+                <div class="register-btn">
+                  <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit"
+                    [disabled]="!form.valid"
+                  >
+                    Registrar
+                  </button>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

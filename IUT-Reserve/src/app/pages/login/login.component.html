@@ -46,7 +46,7 @@
                       formControlName="password"
                     />
                     <mat-icon (click)="flag = !flag" matSuffix>{{
-                      flag ? "visibility" : "visibility_off"
+                      flag ? "visibility_off" : "visibility"
                     }}</mat-icon>
                     <mat-error
                       *ngIf="form.controls['password'].errors?.['minlength']"
