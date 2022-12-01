@@ -9,10 +9,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgMaterialModule } from './ng-material/ng-material.module';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from './shared/shared.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegistrationComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, RegistrationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +21,8 @@ import { HomeComponent } from './pages/home/home.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgMaterialModule,
+    SharedModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

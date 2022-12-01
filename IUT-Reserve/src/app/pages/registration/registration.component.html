@@ -25,6 +25,21 @@
                       formControlName="name"
                       placeholder="Nome Completo"
                     />
+                    <mat-error
+                      *ngIf="form.controls['name'].errors?.['required']"
+                      >Nome obrigatório
+                    </mat-error>
+
+                    <mat-error
+                      *ngIf="form.controls['name'].errors?.['minlength']"
+                    >
+                      Nome precisa pelo menos 3 caracteres.
+                    </mat-error>
+                    <mat-error
+                      *ngIf="form.controls['name'].errors?.['pattern']"
+                    >
+                      O nome deve possuir apenas letras.
+                    </mat-error>
                   </mat-form-field>
                 </div>
 
@@ -57,9 +72,16 @@
                       placeholder="Senha"
                       formControlName="password"
                     />
-                    <mat-icon (click)="flag = !flag" matSuffix>{{
-                      flag ? "visibility" : "visibility_off"
-                    }}</mat-icon>
+                    <mat-icon (click)="flag = !flag" matSuffix>
+                      {{ flag ? "visibility_off" : "visibility" }}
+                    </mat-icon>
+
+                    <mat-error
+                      *ngIf="form.controls['password'].errors?.['required']"
+                    >
+                      Senha obrigatória
+                    </mat-error>
+
                     <mat-error
                       *ngIf="form.controls['password'].errors?.['minlength']"
                     >
@@ -73,17 +95,18 @@
                   <mat-form-field appearance="standard">
                     <input
                       matInput
-                      [type]="flag ? 'password' : 'text'"
+                      [type]="flagConfirm ? 'password' : 'text'"
                       placeholder="Confirmar Senha"
-                      formControlName="password"
+                      formControlName="confirmPassword"
                     />
-                    <mat-icon (click)="flag = !flag" matSuffix>{{
-                      flag ? "visibility" : "visibility_off"
-                    }}</mat-icon>
+                    <mat-icon (click)="flagConfirm = !flagConfirm" matSuffix>
+                      {{ flagConfirm ? "visibility_off" : "visibility" }}
+                    </mat-icon>
+
                     <mat-error
-                      *ngIf="form.controls['password'].errors?.['minlength']"
+                      *ngIf="form.controls['confirmPassword'].errors?.['equalsTo']"
                     >
-                      Senha precisa possuir mais que 8 caracteres.
+                      Senhas não correspondem.
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -93,22 +116,37 @@
                   <mat-form-field appearance="standard">
                     <input
                       matInput
-                      type="tel"
+                      type="text"
                       formControlName="number"
-                      placeholder="Tefefone"
+                      placeholder="Telefone"
+                      mask="(00) 00000-0000"
                     />
+
+                    <mat-error
+                      *ngIf="form.controls['number'].errors?.['required']"
+                      >Telefone obrigatório
+                    </mat-error>
+
+                    <mat-error
+                      *ngIf="form.controls['number'].errors?.['pattern']"
+                    >
+                      Por favor insira um telefone válido.
+                    </mat-error>
                   </mat-form-field>
                 </div>
 
                 <!-- Company -->
                 <div class="form-down">
                   <mat-form-field appearance="standard">
-                    <input
-                      matInput
-                      type="text"
-                      formControlName="company"
-                      placeholder="Empresa"
-                    />
+                    <mat-label>Grupo</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option
+                        *ngFor="let company of companys"
+                        [value]="company"
+                        >{{ company }}</mat-option
+                      >
+                    </mat-select>
                   </mat-form-field>
                 </div>
 
