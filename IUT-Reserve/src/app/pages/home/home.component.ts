@@ -43,6 +43,6 @@ export class HomeComponent implements OnInit {
 
   saveDetails(form: any) {
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
-    // this.form.reset();
+    this.form.reset();
   }
 }

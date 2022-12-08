@@ -16,6 +16,13 @@ export class AdmSalasComponent implements OnInit {
     this.menu = !this.menu;
   }
 
+  //modal tornar adm
+  adm: boolean = false;
+
+  toggleAdm() {
+    this.adm = !this.adm;
+  }
+
   //modal sair
   mostrar: boolean = false;
 

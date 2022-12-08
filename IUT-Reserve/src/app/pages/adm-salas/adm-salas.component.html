@@ -140,6 +140,7 @@
                         color="primary"
                         type="submit"
                         [disabled]="!form.valid"
+                        (click)="toggleAdm()"
                       >
                         Cadastrar
                       </button>
@@ -223,6 +224,20 @@
         </div>
       </div>
       <div (click)="toggleMenu()" class="overlay-menu"></div>
+    </ng-container>
+
+    <!-- MODAL TORNAR ADM -->
+    <ng-container *ngIf="adm">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleAdm()">close</span>
+        <div class="title">
+          <p>Sala Cadastrada com Sucesso!</p>
+        </div>
+        <div class="button-ok" style="display: flex; justify-content: center">
+          <button (click)="toggleAdm()">OK</button>
+        </div>
+      </div>
+      <div (click)="toggleAdm()" class="overlay"></div>
     </ng-container>
 
     <!-- MODAL SAIR -->
