@@ -18,8 +18,8 @@ import { AdmUserComponent } from './pages/adm-user/adm-user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { UpadraoreservasComponent } from './pages/upadraoreservas/upadraoreservas.component';
-import { UserperfilComponent } from './pages/userperfil/userperfil.component';
+import { UserReservasComponent } from './pages/user-reservas/user-reservas.component';
+import { UserPerfilComponent } from './pages/user-perfil/user-perfil.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,8 @@ import { UserperfilComponent } from './pages/userperfil/userperfil.component';
     AppComponent,
     LoginComponent,
     RegistrationComponent,
-    UpadraoreservasComponent,
-    UserperfilComponent,
+    UserReservasComponent,
+    UserPerfilComponent,
   ],
   imports: [
     BrowserModule,
