@@ -8,6 +8,8 @@ import { ReservasAdmComponent } from './pages/reservas-adm/reservas-adm.componen
 import { AdmUserComponent } from './pages/adm-user/adm-user.component';
 import { AdmperfilComponent } from './pages/admperfil/admperfil.component';
 import { UserperfilComponent } from './pages/userperfil/userperfil.component';
+import { AdmsalasComponent } from './pages/admsalas/admsalas.component';
+import { UpadraoreservasComponent } from './pages/upadraoreservas/upadraoreservas.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'adm-user', component: AdmUserComponent },
   { path: 'admperfil', component: AdmperfilComponent },
   { path: 'userperfil', component: UserperfilComponent },
+  { path: 'admsalas', component: AdmsalasComponent },
+  { path: 'upadraoreservas', component: UpadraoreservasComponent},
 ];
 
 @NgModule({

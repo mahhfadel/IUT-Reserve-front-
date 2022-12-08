@@ -13,6 +13,13 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { SharedModule } from './shared/shared.module';
 import { NgxMaskModule } from 'ngx-mask';
+<<<<<<< HEAD
+import { UpadraoreservasComponent } from './pages/upadraoreservas/upadraoreservas.component';
+import { AdmsalasComponent } from './pages/admsalas/admsalas.component';
+
+@NgModule({
+  declarations: [AppComponent, LoginComponent, RegistrationComponent, UpadraoreservasComponent, AdmsalasComponent],
+=======
 import { HomeComponent } from './pages/home/home.component';
 import { ReservasAdmComponent } from './pages/reservas-adm/reservas-adm.component';
 
@@ -24,6 +31,7 @@ import { ReservasAdmComponent } from './pages/reservas-adm/reservas-adm.componen
     HomeComponent,
     ReservasAdmComponent,
   ],
+>>>>>>> 167dc22855634c0a500d0c51fa90c1ade2b52fdc
   imports: [
     BrowserModule,
     AppRoutingModule,
