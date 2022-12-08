@@ -1,5 +1,17 @@
-<header>
-  <h1>IUT Reserve</h1>
-  <span class="material-icons">person</span>
-</header>
-<nav></nav>
+<body>
+  <header>
+    <a routerLink="/login" class="home"><h1>IUT Reserve</h1></a>
+    <a routerLink="/reservas-adm" class="menu">
+      <span class="material-icons">person</span>
+    </a>
+  </header>
+  <nav>
+    <section class="calendar">
+      <mat-card class="demo-inline-calendar-card">
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+      </mat-card>
+      <p>Selected date: {{ selected }}</p>
+    </section>
+    <section class="big-calendar"></section>
+  </nav>
+</body>

@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  AbstractControl,
-  FormControl,
-  FormArray,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { FormValidations } from '../../shared/form-validations';
 
 @Component({
@@ -18,6 +12,13 @@ export class RegistrationComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   flag: boolean = true;
   flagConfirm: boolean = true;
+
+  //modal
+  mostrar: boolean = false;
+
+  toggle() {
+    this.mostrar = !this.mostrar;
+  }
 
   constructor(private fb: FormBuilder) {}
 
@@ -51,6 +52,6 @@ export class RegistrationComponent implements OnInit {
   companys: string[] = ['Unect', 'Select', 'Axion', 'Solucaut'];
 
   saveDetails(form: any) {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
   }
 }
