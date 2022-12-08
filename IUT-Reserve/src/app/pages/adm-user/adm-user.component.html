@@ -1,213 +1,302 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>IUT Reserve</h1>
-        <h2>Admin</h2>
-        <li>
-          <a href="#">
-            <img src="../../../assets/profile.svg" alt="Conta" />
-          </a>
-        </li>
+<body>
+  <header>
+    <a routerLink="/home" class="home"><h1>IUT Reserve</h1></a>
+    <a routerLink="/reservas-adm" class="menu">
+      <div class="admin" (click)="toggleMenu()">
+        <h1>Admin</h1>
+        <span class="material-icons">person</span>
       </div>
-    </header>
-    <div class="profile">
-      <ul id="nav">
-        <li><a href="#" style="font-size: 24px">Gerenciar Reservas</a></li>
-        <li><a href="#" style="font-size: 24px">Gerenciar Salas</a></li>
-        <li><a href="#" style="font-size: 24px">Gerenciar Usuários</a></li>
-        <li><a href="#" style="font-size: 24px">Gerenciar Perfil</a></li>
-        <h1><a href="#">Sair</a></h1>
-      </ul>
-    </div>
-    <div class="reserv">
-      <div class="proxreserv">
-        <h4 style="font-size: 24px">Usuários Pendentes de Aprovação</h4>
-        <div class="reservbox">
-          <div class="reservboxtext">
-            <p style="font-size: 24px">Fulano de Tal - Empresa XYZ</p>
-            <p style="font-size: 24px">(00) 0 0000-0000</p>
-            <p style="font-size: 24px">email@empresa.com</p>
-          </div>
-          <div class="approve">
-            <svg
-              height="40"
-              width="40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"
-                fill="#383838"
-              />
-            </svg>
-          </div>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.3125 2.5625L11.875 10L19.3125 17.4375L17.4375 19.3125L10 11.875L2.5625 19.3125L0.6875 17.4375L8.125 10L0.6875 2.5625L2.5625 0.6875L10 8.125L17.4375 0.6875L19.3125 2.5625Z"
-                fill="#FF3F3F"
-              />
-            </svg>
-          </button>
+    </a>
+  </header>
+  <nav>
+    <div class="container">
+      <div class="pendentes">
+        <span class="title">Usúarios Pendentes de Aprovação</span>
+        <ul class="reservas-pendentes">
+          <li>
+            <div class="content">
+              <div class="linha1">
+                <span>Fulano de Tal</span>
+                -
+                <span>Empresa XYZ</span>
+              </div>
+
+              <div class="linha2">
+                <span>(99) 9 9999-9999</span>
+              </div>
+
+              <div class="linha3">
+                <span>email@email.com</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <span class="material-icons" id="done" (click)="toggleAprovar()"
+                >done</span
+              >
+              <span class="material-icons" id="close" (click)="toggleReprovar()"
+                >close</span
+              >
+            </div>
+          </li>
+        </ul>
+
+        <div class="mostrar-todas">
+          <span (click)="togglePendentes()">Mostrar Todas</span>
         </div>
-        <div class="reservboxspace"></div>
-        <div class="reservbox">
-          <div class="reservboxtext">
-            <p style="font-size: 24px">Fulano de Tal - Empresa XYZ</p>
-            <p style="font-size: 24px">(00) 0 0000-0000</p>
-            <p style="font-size: 24px">email@empresa.com</p>
-          </div>
-          <div class="approve">
-            <svg
-              height="40"
-              width="40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"
-                fill="#383838"
-              />
-            </svg>
-          </div>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.3125 2.5625L11.875 10L19.3125 17.4375L17.4375 19.3125L10 11.875L2.5625 19.3125L0.6875 17.4375L8.125 10L0.6875 2.5625L2.5625 0.6875L10 8.125L17.4375 0.6875L19.3125 2.5625Z"
-                fill="#FF3F3F"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="reservboxspace"></div>
-        <div class="reservbox">
-          <div class="reservboxtext">
-            <p style="font-size: 24px">Fulano de Tal - Empresa XYZ</p>
-            <p style="font-size: 24px">(00) 0 0000-0000</p>
-            <p style="font-size: 24px">email@empresa.com</p>
-          </div>
-          <div class="approve">
-            <svg
-              height="40"
-              width="40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"
-                fill="#383838"
-              />
-            </svg>
-          </div>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.3125 2.5625L11.875 10L19.3125 17.4375L17.4375 19.3125L10 11.875L2.5625 19.3125L0.6875 17.4375L8.125 10L0.6875 2.5625L2.5625 0.6875L10 8.125L17.4375 0.6875L19.3125 2.5625Z"
-                fill="#FF3F3F"
-              />
-            </svg>
-          </button>
-        </div>
-        <button class="mostrartodas" style="font-size: 24px">
-          Mostrar todas
-        </button>
       </div>
-      <div class="passreserv">
-        <h4 style="font-size: 24px">Usuários Aprovados</h4>
-        <div class="reservbox">
-          <div class="reservboxtext">
-            <p style="font-size: 24px">Fulano de Tal - Empresa XYZ</p>
-            <p style="font-size: 24px">(00) 0 0000-0000</p>
-            <p style="font-size: 24px">email@empresa.com</p>
-          </div>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.3125 2.5625L11.875 10L19.3125 17.4375L17.4375 19.3125L10 11.875L2.5625 19.3125L0.6875 17.4375L8.125 10L0.6875 2.5625L2.5625 0.6875L10 8.125L17.4375 0.6875L19.3125 2.5625Z"
-                fill="#FF3F3F"
-              />
-            </svg>
-          </button>
+
+      <div class="aprovados">
+        <span class="title">Usúarios Aprovadas</span>
+        <ul class="reservas-aprovadas">
+          <li>
+            <div class="content">
+              <div class="linha1">
+                <span>Fulano de Tal</span>
+                -
+                <span>Empresa XYZ</span>
+              </div>
+
+              <div class="linha2">
+                <span>(99) 9 9999-9999</span>
+              </div>
+
+              <div class="linha3">
+                <span>email@email.com</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <span class="material-icons" id="close" (click)="toggleExcluir()"
+                >close</span
+              >
+            </div>
+          </li>
+        </ul>
+
+        <div class="mostrar-todas">
+          <span (click)="toggleAprovados()">Mostrar Todas</span>
         </div>
-        <div class="reservboxspace"></div>
-        <div class="reservbox">
-          <div class="reservboxtext">
-            <p style="font-size: 24px">Fulano de Tal - Empresa XYZ</p>
-            <p style="font-size: 24px">(00) 0 0000-0000</p>
-            <p style="font-size: 24px">email@empresa.com</p>
-          </div>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.3125 2.5625L11.875 10L19.3125 17.4375L17.4375 19.3125L10 11.875L2.5625 19.3125L0.6875 17.4375L8.125 10L0.6875 2.5625L2.5625 0.6875L10 8.125L17.4375 0.6875L19.3125 2.5625Z"
-                fill="#FF3F3F"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="reservboxspace"></div>
-        <div class="reservbox">
-          <div class="reservboxtext">
-            <p style="font-size: 24px">Fulano de Tal - Empresa XYZ</p>
-            <p style="font-size: 24px">(00) 0 0000-0000</p>
-            <p style="font-size: 24px">email@empresa.com</p>
-          </div>
-          <button>
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.3125 2.5625L11.875 10L19.3125 17.4375L17.4375 19.3125L10 11.875L2.5625 19.3125L0.6875 17.4375L8.125 10L0.6875 2.5625L2.5625 0.6875L10 8.125L17.4375 0.6875L19.3125 2.5625Z"
-                fill="#FF3F3F"
-              />
-            </svg>
-          </button>
-        </div>
-        <button href="#" class="mostrartodas" style="font-size: 24px">
-          Mostrar todas
-        </button>
       </div>
     </div>
-  </body>
-</html>
+
+    <div class="menu">
+      <div
+        class="itens-menu"
+        routerLink="/adm-reservas"
+        routerLinkActive="active"
+      >
+        <p>Reservas</p>
+      </div>
+
+      <div class="itens-menu" routerLink="/adm-salas" routerLinkActive="active">
+        <p>Salas</p>
+      </div>
+
+      <div class="itens-menu" routerLink="/adm-user" routerLinkActive="active">
+        <p>Usúarios</p>
+      </div>
+
+      <div
+        class="itens-menu"
+        routerLink="/adm-perfil"
+        routerLinkActive="active"
+      >
+        <p>Perfil</p>
+      </div>
+
+      <div class="sair">
+        <p (click)="toggle()">Sair</p>
+      </div>
+    </div>
+
+    <!-- MODAL MENU -->
+    <ng-container *ngIf="menu">
+      <div class="modal-menu">
+        <div
+          class="itens-menu"
+          routerLink="/adm-reservas"
+          routerLinkActive="active"
+        >
+          <p>Reservas</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/adm-salas"
+          routerLinkActive="active"
+        >
+          <p>Salas</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/adm-user"
+          routerLinkActive="active"
+        >
+          <p>Usúarios</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/adm-perfil"
+          routerLinkActive="active"
+        >
+          <p>Perfil</p>
+        </div>
+
+        <div class="sair">
+          <p (click)="toggle()">Sair</p>
+        </div>
+      </div>
+      <div (click)="toggleMenu()" class="overlay-menu"></div>
+    </ng-container>
+
+    <!-- MODAL SAIR -->
+    <ng-container *ngIf="mostrar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggle()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja sair?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggle()">Não</button>
+          <button routerLink="/login">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggle()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL APROVAR -->
+    <ng-container *ngIf="aprovar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleAprovar()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja aprovar usúario?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleAprovar()">Não</button>
+          <button (click)="toggleAprovar()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleAprovar()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL REPROVAR -->
+    <ng-container *ngIf="reprovar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleReprovar()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja reprovar usúario?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleReprovar()">Não</button>
+          <button (click)="toggleReprovar()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleReprovar()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL EXCLUIR -->
+    <ng-container *ngIf="excluir">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleExcluir()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja excluir usúario?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleExcluir()">Não</button>
+          <button (click)="toggleExcluir()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleExcluir()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL MORE PENDENTES -->
+    <ng-container *ngIf="pendentes">
+      <div class="modal-pendentes">
+        <div class="close">
+          <span class="material-icons" (click)="togglePendentes()">close</span>
+        </div>
+
+        <div class="pendentes">
+          <span class="title">Usúarios Pendentes de Aprovação</span>
+          <ul class="reservas-pendentes">
+            <li>
+              <div class="content">
+                <div class="linha1">
+                  <span>Fulano de Tal</span>
+                  -
+                  <span>Empresa XYZ</span>
+                </div>
+
+                <div class="linha2">
+                  <span>(99) 9 9999-9999</span>
+                </div>
+
+                <div class="linha3">
+                  <span>email@email.com</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <span class="material-icons" id="done" (click)="toggleAprovar()"
+                  >done</span
+                >
+                <span
+                  class="material-icons"
+                  id="close"
+                  (click)="toggleReprovar()"
+                  >close</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div (click)="togglePendentes()" class="overlay-more"></div>
+    </ng-container>
+
+    <!-- MODAL MORE APROVADOS -->
+    <ng-container *ngIf="aprovados">
+      <div class="modal-aprovados">
+        <div class="close">
+          <span class="material-icons" (click)="toggleAprovados()">close</span>
+        </div>
+
+        <div class="pendentes">
+          <span class="title">Usúarios Aprovados</span>
+          <ul class="reservas-pendentes">
+            <li>
+              <div class="content">
+                <div class="linha1">
+                  <span>Fulano de Tal</span>
+                  -
+                  <span>Empresa XYZ</span>
+                </div>
+
+                <div class="linha2">
+                  <span>(99) 9 9999-9999</span>
+                </div>
+
+                <div class="linha3">
+                  <span>email@email.com</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <span
+                  class="material-icons"
+                  id="close"
+                  (click)="toggleReprovar()"
+                  >close</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div (click)="toggleAprovados()" class="overlay-more"></div>
+    </ng-container>
+  </nav>
+</body>
