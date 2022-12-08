@@ -60,13 +60,13 @@ export class UserPerfilComponent implements OnInit {
         null,
         [Validators.required, Validators.pattern('^[0-9]{11}$')],
       ],
-      cargo: [null, [Validators.required]],
+      company: [null, [Validators.required]],
     });
 
     console.log(this.form.value);
   }
 
-  empresa: string[] = ['Coordenador', 'Supervisor', 'Estagiario', 'Professor'];
+  companys: string[] = ['Unect', 'Select', 'Axion', 'Solucaut'];
 
   saveDetails(form: any) {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));

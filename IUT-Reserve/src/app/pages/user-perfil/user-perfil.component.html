@@ -119,17 +119,17 @@
               <div class="cargo">
                 <mat-form-field appearance="outline">
                   <mat-label>Empresa</mat-label>
-                  <mat-select formControlName="empresa">
+                  <mat-select formControlName="company">
                     <mat-option>None</mat-option>
                     <mat-option
-                      *ngFor="let empresa of empresas"
-                      [value]="empresa"
-                      >{{ empresa }}</mat-option
+                      *ngFor="let company of companys"
+                      [value]="company"
+                      >{{ company }}</mat-option
                     >
                   </mat-select>
                   <mat-error
-                    *ngIf="form.controls['empresa'].errors?.['required']"
-                    >Empresa obrigatório
+                    *ngIf="form.controls['company'].errors?.['required']"
+                    >Grupo obrigatório
                   </mat-error>
                 </mat-form-field>
               </div>

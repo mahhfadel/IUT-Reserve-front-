@@ -53,11 +53,9 @@ export class AdmPerfilComponent implements OnInit {
       ],
       cargo: [null, [Validators.required]],
     });
-
-    console.log(this.form.value);
   }
 
-  empresas: string[] = ['Coordenador', 'Supervisor', 'Estagiario', 'Professor'];
+  cargos: string[] = ['Estagiario', 'Coordenador', 'Orientador', 'Professor'];
 
   saveDetails(form: any) {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
