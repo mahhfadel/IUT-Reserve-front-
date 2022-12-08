@@ -11,9 +11,11 @@ import { NgMaterialModule } from './ng-material/ng-material.module';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { SharedModule } from './shared/shared.module';
 import { NgxMaskModule } from 'ngx-mask';
+import { UpadraoreservasComponent } from './pages/upadraoreservas/upadraoreservas.component';
+import { AdmsalasComponent } from './pages/admsalas/admsalas.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegistrationComponent],
+  declarations: [AppComponent, LoginComponent, RegistrationComponent, UpadraoreservasComponent, AdmsalasComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
