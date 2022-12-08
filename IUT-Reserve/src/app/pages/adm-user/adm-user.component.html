@@ -67,6 +67,9 @@
             </div>
 
             <div class="actions">
+              <span class="material-icons" id="admin" (click)="toggleAdm()"
+                >admin_panel_settings</span
+              >
               <span class="material-icons" id="close" (click)="toggleExcluir()"
                 >close</span
               >
@@ -197,6 +200,21 @@
       <div (click)="toggleReprovar()" class="overlay"></div>
     </ng-container>
 
+    <!-- MODAL TORNAR ADM -->
+    <ng-container *ngIf="adm">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleAdm()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja tornar usúario administrador?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleAdm()">Não</button>
+          <button (click)="toggleAdm()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleAdm()" class="overlay"></div>
+    </ng-container>
+
     <!-- MODAL EXCLUIR -->
     <ng-container *ngIf="excluir">
       <div class="modal">
@@ -285,6 +303,9 @@
               </div>
 
               <div class="actions">
+                <span class="material-icons" id="admin" (click)="toggleAdm()"
+                  >admin_panel_settings</span
+                >
                 <span
                   class="material-icons"
                   id="close"

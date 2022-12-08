@@ -3,13 +3,152 @@
     <a routerLink="/home" class="home"><h1>IUT Reserve</h1></a>
     <a routerLink="/reservas-adm" class="menu">
       <div class="admin" (click)="toggleMenu()">
-        <h1>Admin</h1>
+        <h1>Nome</h1>
         <span class="material-icons">person</span>
       </div>
     </a>
   </header>
   <nav>
-    <div class="container"></div>
+    <div class="container">
+      <div class="dados-perfil">
+        <div class="nome">
+          <p>Nome Completo</p>
+          <div class="content">
+            <span>Fernando Santos</span>
+          </div>
+        </div>
+
+        <div class="email">
+          <p>E-mail</p>
+          <div class="content">
+            <span>fernandosantos@email.com</span>
+          </div>
+        </div>
+
+        <div class="telefone">
+          <p>Telefone</p>
+          <div class="content">
+            <span>(43) 99999-9999</span>
+          </div>
+        </div>
+
+        <div class="cargo">
+          <p>Empresa</p>
+          <div class="content">
+            <span>Amazon</span>
+          </div>
+        </div>
+      </div>
+      <div class="alterar-perfil">
+        <mat-card>
+          <mat-card-content>
+            <form
+              [formGroup]="form"
+              (ngSubmit)="saveDetails(form)"
+              autocomplete="off"
+              class="form-wrapper"
+            >
+              <div class="nome">
+                <mat-form-field appearance="outline">
+                  <mat-label>Nome Completo</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="name"
+                    placeholder="Nome Completo"
+                    id="nome"
+                  />
+                  <mat-error *ngIf="form.controls['name'].errors?.['required']"
+                    >Nome obrigatório
+                  </mat-error>
+
+                  <mat-error
+                    *ngIf="form.controls['name'].errors?.['minlength']"
+                  >
+                    Nome precisa pelo menos 3 caracteres.
+                  </mat-error>
+                  <mat-error *ngIf="form.controls['name'].errors?.['pattern']">
+                    O nome deve possuir apenas letras.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="email">
+                <mat-form-field appearance="outline">
+                  <mat-label>E-mail</mat-label>
+                  <input
+                    matInput
+                    type="email"
+                    formControlName="email"
+                    placeholder="E-mail"
+                    id="email"
+                  />
+                  <mat-error *ngIf="form.controls['email'].errors?.['required']"
+                    >Email obrigatório</mat-error
+                  >
+                  <mat-error *ngIf="form.controls['email'].errors?.['pattern']"
+                    >Por favor insira um email válido.</mat-error
+                  >
+                </mat-form-field>
+              </div>
+
+              <div class="telefone">
+                <mat-form-field appearance="outline">
+                  <mat-label>Telefone</mat-label>
+                  <input
+                    matInput
+                    type="tel"
+                    formControlName="telefone"
+                    placeholder="Telefone"
+                    id="telefone"
+                    mask="(00) 00000-0000"
+                  />
+                  <mat-error
+                    *ngIf="form.controls['telefone'].errors?.['required']"
+                    >Telefone obrigatório
+                  </mat-error>
+
+                  <mat-error
+                    *ngIf="form.controls['telefone'].errors?.['pattern']"
+                  >
+                    Por favor insira um telefone válido.
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="cargo">
+                <mat-form-field appearance="outline">
+                  <mat-label>Empresa</mat-label>
+                  <mat-select formControlName="empresa">
+                    <mat-option>None</mat-option>
+                    <mat-option
+                      *ngFor="let empresa of empresas"
+                      [value]="empresa"
+                      >{{ empresa }}</mat-option
+                    >
+                  </mat-select>
+                  <mat-error
+                    *ngIf="form.controls['empresa'].errors?.['required']"
+                    >Empresa obrigatório
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div class="buttons-forms">
+                <span (click)="toggleExcluir()">Excluir Conta</span>
+                <button
+                  mat-raised-button
+                  type="submit"
+                  [disabled]="!form.valid"
+                >
+                  Editar Perfil
+                </button>
+              </div>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
 
     <div class="menu">
       <div

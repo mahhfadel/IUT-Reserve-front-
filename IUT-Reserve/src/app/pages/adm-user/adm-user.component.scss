@@ -184,7 +184,7 @@ nav {
 
           display: flex;
           justify-content: space-between;
-          align-items: flex-end;
+          align-items: center;
 
           .content {
             display: flex;
@@ -212,6 +212,10 @@ nav {
               margin: 0.1rem 0 0.1rem 0rem;
               font-size: 1.2rem;
               cursor: pointer;
+            }
+
+            #admin {
+              color: #383838;
             }
 
             #close {
@@ -640,7 +644,7 @@ nav {
 
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
 
         .content {
           display: flex;
@@ -668,6 +672,10 @@ nav {
             margin: 0.1rem 0 0.1rem 0rem;
             font-size: 1.6rem;
             cursor: pointer;
+          }
+
+          #admin {
+            color: #383838;
           }
 
           #close {

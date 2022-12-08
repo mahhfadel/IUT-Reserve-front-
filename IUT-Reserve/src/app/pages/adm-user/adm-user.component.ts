@@ -34,6 +34,13 @@ export class AdmUserComponent implements OnInit {
     this.reprovar = !this.reprovar;
   }
 
+  //modal tornar adm
+  adm: boolean = false;
+
+  toggleAdm() {
+    this.adm = !this.adm;
+  }
+
   //modal excluir
   excluir: boolean = false;
 

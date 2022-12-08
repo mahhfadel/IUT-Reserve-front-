@@ -66,6 +66,63 @@ nav {
 
     display: flex;
     flex-wrap: wrap;
+    .dados-perfil {
+      width: 50%;
+
+      padding-right: 5rem;
+
+      p {
+        font-weight: 900;
+        font-size: 1rem;
+
+        color: #141414;
+
+        margin-bottom: 0.6rem;
+      }
+
+      .content {
+        background-color: #e7e7e7;
+        /* superior | direita | inferior | esquerda */
+        padding: 1rem 1rem 1rem 0.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+
+        font-weight: 400;
+        font-size: 1rem;
+
+        color: #18171d;
+      }
+    }
+
+    .alterar-perfil {
+      width: 45%;
+
+      mat-form-field {
+        width: 100%;
+      }
+
+      .buttons-forms {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top: 1.5rem;
+
+        span {
+          font-weight: 500;
+          font-size: 1rem;
+          color: #ff3f3f;
+          cursor: pointer;
+        }
+
+        button {
+          background-color: #ffef03;
+          font-weight: 400;
+          font-size: 20px;
+          padding: 0.1rem 2rem;
+        }
+      }
+    }
   }
 }
 
