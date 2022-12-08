@@ -1,6 +1,10 @@
 body {
-  overflow: hidden;
+  // overflow: hidden;
   user-select: none;
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 header {
@@ -32,7 +36,7 @@ header {
 nav {
   padding: 1.6rem 3.5rem 0;
   display: flex;
-  background-color: red;
+  // background-color: red;
 
   .calendar {
     // background-color: red;
@@ -51,13 +55,124 @@ nav {
       // display: none;
       color: black;
     }
+
+    .sala {
+      mat-form-field {
+        width: 100%;
+      }
+    }
+
+    .horario {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+
+      mat-form-field {
+        width: 45%;
+      }
+    }
+
+    .register-btn {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+
+      margin-top: 1rem;
+
+      button {
+        width: 50%;
+        padding: 0.1rem 1rem;
+        background-color: #ffef03;
+
+        font-weight: 700;
+        // font-size: 1.5rem;
+
+        color: #212121;
+      }
+    }
   }
 
   .big-calendar {
-    background-color: purple;
+    // background-color: purple;
     width: 70%;
     height: 78vh;
   }
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #333;
+  width: 30%;
+  min-width: 320px;
+  position: fixed;
+  left: 50%;
+  padding: 24px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 21;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  span {
+    position: fixed;
+    color: #ff3f3f;
+    font-size: 1.8rem;
+    top: 0.7rem;
+    right: 0.7rem;
+
+    cursor: pointer;
+  }
+
+  .title {
+    width: 100%;
+    /* vertical | horizontal */
+    padding: 0 0.8rem;
+    p {
+      font-weight: 400;
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+      text-align: center;
+
+      color: #383838;
+    }
+  }
+  .button-ok {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+
+    button {
+      width: 48%;
+      background-color: #ffef03;
+      border: none;
+      border-radius: 1rem;
+      padding: 0.3rem;
+
+      font-weight: 400;
+      font-size: 1rem;
+      color: #383838;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.overlay {
+  background: #000;
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 20;
 }
 
 @media screen and (max-width: 777px) {

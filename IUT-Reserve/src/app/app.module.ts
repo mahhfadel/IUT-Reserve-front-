@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { NgMaterialModule } from './ng-material/ng-material.module';
 import { SharedModule } from './shared/shared.module';
 import { NgxMaskModule } from 'ngx-mask';
+import { CalendarModule } from 'angular-calendar';
+import {
+  SchedulerDateFormatter,
+  SchedulerModule,
+} from 'angular-calendar-scheduler';
 
 import { AdmPerfilComponent } from './pages/adm-perfil/adm-perfil.component';
 import { AdmReservasComponent } from './pages/adm-reservas/adm-reservas.component';
@@ -48,6 +53,8 @@ import { UserPerfilComponent } from './pages/user-perfil/user-perfil.component';
     NgxMaskModule.forRoot(),
     MatSidenavModule,
     CommonModule,
+    CalendarModule.forRoot(SchedulerDateFormatter),
+    SchedulerModule.forRoot({ locale: 'en', headerDateFormat: 'daysRange' }),
   ],
   providers: [],
   bootstrap: [AppComponent],

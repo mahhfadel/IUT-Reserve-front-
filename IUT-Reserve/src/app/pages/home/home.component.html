@@ -10,8 +10,76 @@
       <mat-card class="demo-inline-calendar-card">
         <mat-calendar [(selected)]="selected"></mat-calendar>
       </mat-card>
-      <p>Selected date: {{ selected }}</p>
+      <!-- <p>Selected date: {{ selected }}</p> -->
+
+      <mat-card>
+        <mat-card-content>
+          <form
+            [formGroup]="form"
+            (ngSubmit)="saveDetails(form)"
+            autocomplete="off"
+            class="form-wrapper"
+          >
+            <div class="sala">
+              <mat-form-field appearance="outline">
+                <mat-label>Sala</mat-label>
+                <mat-select formControlName="sala">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let sala of salas" [value]="sala">{{
+                    sala
+                  }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="horario">
+              <mat-form-field appearance="standard">
+                <input
+                  matInput
+                  type="time"
+                  formControlName="timeStart"
+                  placeholder="Inicio"
+                />
+              </mat-form-field>
+
+              <mat-form-field appearance="standard">
+                <input
+                  matInput
+                  type="time"
+                  formControlName="timeEnd"
+                  placeholder="Inicio"
+                />
+              </mat-form-field>
+            </div>
+
+            <div class="register-btn">
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                [disabled]="!form.valid"
+                (click)="toggle()"
+              >
+                Reservar
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
     </section>
-    <section class="big-calendar"></section>
+
+    <!-- MODAL RESERVAR -->
+    <ng-container *ngIf="mostrar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggle()">close</span>
+        <div class="title">
+          <p>Reserva realizada com sucesso!</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggle()">OK</button>
+        </div>
+      </div>
+      <div (click)="toggle()" class="overlay"></div>
+    </ng-container>
   </nav>
 </body>

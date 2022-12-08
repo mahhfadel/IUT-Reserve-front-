@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "@syncfusion/ej2-angular-schedule": "^20.3.58",
+    "angular-calendar-scheduler": "^14.2.0",
+    "date-fns": "^2.29.3",
     "yarn": "^1.22.19"
   }
 }
