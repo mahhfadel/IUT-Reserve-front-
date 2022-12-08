@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  width: 100%;
+  height: 88.2%;
+}
+
+a,
+a:hover,
+a:visited {
+  color: unset;
+  text-decoration: none;
+}
+
+header {
+  background: #ffef03;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+
+  width: 99%;
+  h1 {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    align-items: center;
+
+    color: #ffffff;
+    display: flex;
+    font-size: 1.8rem;
+    padding: 2.4rem;
+  }
+  h2 {
+    position: absolute;
+    right: 100px;
+    top: 45px;
+    color: #ffffff;
+    display: flex;
+    font-size: 1.8rem;
+  }
+  li {
+    position: absolute;
+    list-style: none;
+    right: 30px;
+  }
+}
+
+div.profile {
+  width: 300px;
+  height: 100%;
+  float: right;
+  padding-left: 50px;
+  padding-top: 30px;
+  background-color: #ffef03;
+}
+
+.profile{
+  h1 {
+    font-family: "Lato";
+    font-style: normal;
+    color: #ff0000;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+  }
+}
+
+ul {
+  li {
+    list-style: none;
+    padding-top: 40px;
+  }
+}
+
+ul li a {
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.gerenciar button {
+  width: 200px;
+  height: 40px;
+  border: 0;
+  background-color: #ffef03;
+}
+
+.gerenciar button a {
+  color: black;
+  text-decoration: none;
+}
+
+div.gerenciarbuttonspace {
+  height: 30px;
+}
+
+button.sair {
+  font-family: "Lato";
+  font-style: normal;
+  color: #ff0000;
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+}
+
+.gerenciar button:hover {
+  background-color: white;
+}
+
+div.reserv {
+  padding-top: 30px;
+  padding-left: 50px;
+  display: flex;
+}
+
+div.approve{
+  margin-right: -175px;
+}
+
+div.reservbox {
+  margin-top: 30px;
+  width: 500px;
+  padding-top: 10px;
+  height: 150px;
+  border-radius: 20px 20px;
+  background-color: #ffef03;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.reservboxtext {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reservbox button {
+  width: 40px;
+  height: 3px;
+  border: 0;
+  margin-top: 90px;
+  margin-right: 15px;
+  background-color: #ffef03;
+}
+
+#nav a:hover {
+  height: 40px;
+  width: 220px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.reservboxspace {
+  height: 30px;
+}
+
+button.mostrartodas {
+  font-family: "Lato";
+  font-style: normal;
+  background: none;
+  border: 0;
+  margin-left: 350px;
+  margin-top: 15px;
+}
+
+div.passreserv {
+  margin-left: 100px;
+}
+
+@media (max-width: 1450px) {
+  div.profile {
+    display: none;
+  }
+
+  div.reserv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.passreserv {
+    margin: 0;
+  }
+}

@@ -1,83 +1,83 @@
-<div class="background">
-  <div class="container">
-    <div class="logo">
-      <mat-icon svgIcon="iut-logo" class="icon"></mat-icon>
-    </div>
-    <div class="login">
-      <div class="form-group">
-        <h2>Bem vindo a</h2>
-        <span>IUT-Reserve</span>
-        <div class="form">
-          <mat-card>
-            <mat-card-title>Faça seu login</mat-card-title>
-            <mat-card-content>
-              <form
-                [formGroup]="form"
-                (ngSubmit)="saveDetails(form)"
-                autocomplete="off"
-                class="form-wrapper"
-              >
-                <div class="form-email">
-                  <mat-form-field appearance="standard">
-                    <input
-                      matInput
-                      type="email"
-                      formControlName="email"
-                      placeholder="Usuário"
-                    />
-                    <mat-icon matSuffix>mail_outline</mat-icon>
-                    <mat-error
-                      *ngIf="form.controls['email'].errors?.['required']"
-                      >Email obrigatório</mat-error
-                    >
-                    <mat-error
-                      *ngIf="form.controls['email'].errors?.['pattern']"
-                      >Por favor insira um email válido.</mat-error
-                    >
-                  </mat-form-field>
-                </div>
+<body>
+  <div class="background">
+    <div class="container">
+      <div class="logo">
+        <mat-icon svgIcon="iut-logo" class="icon"></mat-icon>
+      </div>
+      <div class="login">
+        <div class="form-group">
+          <h2>Bem vindo a</h2>
+          <span>IUT-Reserve</span>
+          <div class="form">
+            <mat-card>
+              <mat-card-title>Faça seu login</mat-card-title>
+              <mat-card-content>
+                <form
+                  [formGroup]="form"
+                  (ngSubmit)="saveDetails(form)"
+                  autocomplete="off"
+                  class="form-wrapper"
+                >
+                  <div class="form-email">
+                    <mat-form-field appearance="standard">
+                      <input
+                        matInput
+                        type="email"
+                        formControlName="email"
+                        placeholder="Usuário"
+                      />
+                      <mat-icon matSuffix>mail_outline</mat-icon>
+                      <mat-error
+                        *ngIf="form.controls['email'].errors?.['required']"
+                        >Email obrigatório</mat-error
+                      >
+                      <mat-error
+                        *ngIf="form.controls['email'].errors?.['pattern']"
+                        >Por favor insira um email válido.</mat-error
+                      >
+                    </mat-form-field>
+                  </div>
 
-                <div class="form-password">
-                  <mat-form-field appearance="standard">
-                    <input
-                      matInput
-                      [type]="flag ? 'password' : 'text'"
-                      placeholder="Senha"
-                      formControlName="password"
-                    />
-                    <mat-icon (click)="flag = !flag" matSuffix>{{
-                      flag ? "visibility_off" : "visibility"
-                    }}</mat-icon>
-                    <mat-error
-                      *ngIf="form.controls['password'].errors?.['minlength']"
+                  <div class="form-password">
+                    <mat-form-field appearance="standard">
+                      <input
+                        matInput
+                        [type]="flag ? 'password' : 'text'"
+                        placeholder="Senha"
+                        formControlName="password"
+                      />
+                      <mat-icon (click)="flag = !flag" matSuffix>{{
+                        flag ? "visibility_off" : "visibility"
+                      }}</mat-icon>
+                      <mat-error
+                        *ngIf="form.controls['password'].errors?.['minlength']"
+                      >
+                        Senha precisa possuir mais que 8 caracteres.
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="login-btn">
+                    <button
+                      mat-raised-button
+                      color="primary"
+                      type="submit"
+                      [disabled]="!form.valid"
+                      routerLink="/home"
                     >
-                      Senha precisa possuir mais que 8 caracteres.
-                    </mat-error>
-                  </mat-form-field>
-                </div>
-                <div class="login-btn">
-                  <button
-                    mat-raised-button
-                    color="primary"
-                    type="submit"
-                    [disabled]="!form.valid"
-                  >
-                    Entrar
-                  </button>
-                </div>
-              </form>
-            </mat-card-content>
-          </mat-card>
-          <div class="creat-acount">
-            <div class="link-creat-acount">
-              <a
-                href="https://media.tenor.com/o2Bfe9HO5VQAAAAC/run-forrest-puppet.gif"
-                >Criar conta</a
-              >
+                      Entrar
+                    </button>
+                  </div>
+                </form>
+              </mat-card-content>
+            </mat-card>
+            <div class="creat-acount">
+              <div class="link-creat-acount">
+                <a routerLink="/registration">Criar conta</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</body>

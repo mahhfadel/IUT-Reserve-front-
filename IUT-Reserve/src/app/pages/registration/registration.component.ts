@@ -13,6 +13,13 @@ export class RegistrationComponent implements OnInit {
   flag: boolean = true;
   flagConfirm: boolean = true;
 
+  //modal
+  mostrar: boolean = false;
+
+  toggle() {
+    this.mostrar = !this.mostrar;
+  }
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -38,12 +45,13 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: [null, [FormValidations.equalsTo('password')]],
 
       number: [null, [Validators.required, Validators.pattern('^[0-9]{11}$')]],
+      company: [null, [Validators.required]],
     });
   }
 
   companys: string[] = ['Unect', 'Select', 'Axion', 'Solucaut'];
 
   saveDetails(form: any) {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(form.value, null, 4));
   }
 }

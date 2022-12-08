@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+a,
+a:hover,
+a:visited {
+  color: unset;
+  text-decoration: none;
+}
+
+header {
+  background: #ffef03;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+
+  width: 99%;
+  h1 {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    align-items: center;
+
+    color: #ffffff;
+    display: flex;
+    font-size: 1.8rem;
+    padding: 2.4rem;
+  }
+  li {
+    position: absolute;
+    list-style: none;
+    right: 30px;
+  }
+}
+
+.iut-logo-container h1 {
+  position: absolute;
+  width: 217px;
+  height: 48px;
+  left: 30px;
+  top: 37px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.iut-control-container {
+  width: 100%;
+  max-width: 2560px;
+  margin-top: 54px;
+  margin-left: 46px;
+  margin-bottom: 65px;
+}
+
+.iut-container {
+  align-content: center;
+  margin: 0 auto;
+}
+
+.iut-control {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 361px;
+  height: 40px;
+
+  background: #e7e7e7;
+  border: 1px solid #141414;
+  border-radius: 10px;
+}
+
+.iut-control2 {
+  h1 {
+    position: absolute;
+    width: 113px;
+    height: 24px;
+    left: 45px;
+    bottom: 20px;
+
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    color: #ff0000;
+  }
+  h2 {
+    position: absolute;
+    width: 100px;
+    height: 33px;
+    left: 305px;
+    bottom: 15px;
+    padding-left: 15px;
+    background: #ffef03;
+    border-radius: 10px;
+  }
+}
+
+ul {
+  li {
+    list-style: none;
+    padding-top: 40px;
+  }
+}
+
+ul li a {
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.iut-profile {
+  min-height: 720px;
+  height: 100%;
+  width: 343px;
+  white-space: nowrap;
+  float: right;
+  background: #ffef03;
+  .profile {
+    display: column;
+    padding: 5rem;
+  }
+
+  .container {
+    border: none;
+    padding: 10px 10px;
+    margin: 10px;
+  }
+}
+
+.button {
+  all: unset;
+  cursor: pointer;
+  outline: revert;
+  h1 {
+    color: #ff0000;
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+  }
+}
