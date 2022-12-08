@@ -1,1 +1,92 @@
-<p>user-perfil works!</p>
+<body>
+  <header>
+    <a routerLink="/home" class="home"><h1>IUT Reserve</h1></a>
+    <a routerLink="/reservas-adm" class="menu">
+      <div class="admin" (click)="toggleMenu()">
+        <h1>Admin</h1>
+        <span class="material-icons">person</span>
+      </div>
+    </a>
+  </header>
+  <nav>
+    <div class="container"></div>
+
+    <div class="menu">
+      <div
+        class="itens-menu"
+        routerLink="/user-reservas"
+        routerLinkActive="active"
+      >
+        <p>Reservas</p>
+      </div>
+
+      <div
+        class="itens-menu"
+        routerLink="/user-perfil"
+        routerLinkActive="active"
+      >
+        <p>Perfil</p>
+      </div>
+
+      <div class="sair">
+        <p (click)="toggle()">Sair</p>
+      </div>
+    </div>
+
+    <!-- MODAL MENU -->
+    <ng-container *ngIf="menu">
+      <div class="modal-menu">
+        <div
+          class="itens-menu"
+          routerLink="/user-reservas"
+          routerLinkActive="active"
+        >
+          <p>Reservas</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/user-perfil"
+          routerLinkActive="active"
+        >
+          <p>Perfil</p>
+        </div>
+
+        <div class="sair">
+          <p (click)="toggle()">Sair</p>
+        </div>
+      </div>
+      <div (click)="toggleMenu()" class="overlay-menu"></div>
+    </ng-container>
+
+    <!-- MODAL SAIR -->
+    <ng-container *ngIf="mostrar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggle()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja sair?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggle()">Não</button>
+          <button routerLink="/login">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggle()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL CANCELAR -->
+    <ng-container *ngIf="cancelar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleCancelar()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja cancelar essa reserva?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleCancelar()">Não</button>
+          <button (click)="toggleCancelar()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleCancelar()" class="overlay"></div>
+    </ng-container>
+  </nav>
+</body>
