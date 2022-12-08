@@ -1,0 +1,310 @@
+<body>
+  <header>
+    <a routerLink="/home" class="home"><h1>IUT Reserve</h1></a>
+    <a routerLink="/reservas-adm" class="menu">
+      <div class="admin" (click)="toggleMenu()">
+        <h1>Admin</h1>
+        <span class="material-icons">person</span>
+      </div>
+    </a>
+  </header>
+  <nav>
+    <div class="container">
+      <div class="pendentes">
+        <span class="title">Pendentes de Aprovação</span>
+        <ul class="reservas-pendentes">
+          <li>
+            <div class="content">
+              <div class="linha1">
+                <span>03/02/2021</span>
+                -
+                <span>08:00 às 18:00</span>
+              </div>
+
+              <div class="linha2">
+                <span>Sala 1</span>
+              </div>
+
+              <div class="linha3">
+                <span>Empresa legal</span>
+                -
+                <span>Fulano de Tal</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <span class="material-icons" id="done" (click)="toggleAprovar()"
+                >done</span
+              >
+              <span class="material-icons" id="close" (click)="toggleReprovar()"
+                >close</span
+              >
+            </div>
+          </li>
+        </ul>
+
+        <div class="mostrar-todas">
+          <span (click)="togglePendentes()">Mostrar Todas</span>
+        </div>
+      </div>
+
+      <div class="aprovados">
+        <span class="title">Aprovadas</span>
+        <ul class="reservas-aprovadas">
+          <li>
+            <div class="content">
+              <div class="linha1">
+                <span>03/02/2021</span>
+                -
+                <span>08:00 às 18:00</span>
+              </div>
+
+              <div class="linha2">
+                <span>Sala 1</span>
+              </div>
+
+              <div class="linha3">
+                <span>Empresa legal</span>
+                -
+                <span>Fulano de Tal</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <span class="material-icons" id="close" (click)="toggleExcluir()"
+                >close</span
+              >
+            </div>
+          </li>
+        </ul>
+
+        <div class="mostrar-todas">
+          <span (click)="toggleAprovados()">Mostrar Todas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <div
+        class="itens-menu"
+        routerLink="/adm-reservas"
+        routerLinkActive="active"
+      >
+        <p>Reservas</p>
+      </div>
+
+      <div class="itens-menu" routerLink="/adm-salas" routerLinkActive="active">
+        <p>Salas</p>
+      </div>
+
+      <div class="itens-menu" routerLink="/adm-user" routerLinkActive="active">
+        <p>Usúario</p>
+      </div>
+
+      <div
+        class="itens-menu"
+        routerLink="/adm-perfil"
+        routerLinkActive="active"
+      >
+        <p>Perfil</p>
+      </div>
+
+      <div class="sair">
+        <p (click)="toggle()">Sair</p>
+      </div>
+    </div>
+
+    <!-- MODAL MENU -->
+    <ng-container *ngIf="menu">
+      <div class="modal-menu">
+        <div
+          class="itens-menu"
+          routerLink="/adm-reservas"
+          routerLinkActive="active"
+        >
+          <p>Reservas</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/adm-salas"
+          routerLinkActive="active"
+        >
+          <p>Salas</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/adm-user"
+          routerLinkActive="active"
+        >
+          <p>Usúario</p>
+        </div>
+
+        <div
+          class="itens-menu"
+          routerLink="/adm-perfil"
+          routerLinkActive="active"
+        >
+          <p>Perfil</p>
+        </div>
+
+        <div class="sair">
+          <p (click)="toggle()">Sair</p>
+        </div>
+      </div>
+      <div (click)="toggleMenu()" class="overlay-menu"></div>
+    </ng-container>
+
+    <!-- MODAL SAIR -->
+    <ng-container *ngIf="mostrar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggle()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja sair?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggle()">Não</button>
+          <button routerLink="/login">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggle()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL APROVAR -->
+    <ng-container *ngIf="aprovar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleAprovar()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja aprovar reserva?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleAprovar()">Não</button>
+          <button (click)="toggleAprovar()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleAprovar()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL REPROVAR -->
+    <ng-container *ngIf="reprovar">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleReprovar()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja reprovar reserva?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleReprovar()">Não</button>
+          <button (click)="toggleReprovar()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleReprovar()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL EXCLUIR -->
+    <ng-container *ngIf="excluir">
+      <div class="modal">
+        <span class="material-icons" (click)="toggleExcluir()">close</span>
+        <div class="title">
+          <p>Tem certeza que deseja excluir reserva?</p>
+        </div>
+        <div class="button-ok">
+          <button (click)="toggleExcluir()">Não</button>
+          <button (click)="toggleExcluir()">Sim</button>
+        </div>
+      </div>
+      <div (click)="toggleExcluir()" class="overlay"></div>
+    </ng-container>
+
+    <!-- MODAL MORE PENDENTES -->
+    <ng-container *ngIf="pendentes">
+      <div class="modal-pendentes">
+        <div class="close">
+          <span class="material-icons" (click)="togglePendentes()">close</span>
+        </div>
+
+        <div class="pendentes">
+          <span class="title">Pendentes de Aprovação</span>
+          <ul class="reservas-pendentes">
+            <li>
+              <div class="content">
+                <div class="linha1">
+                  <span>03/02/2021</span>
+                  -
+                  <span>08:00 às 18:00</span>
+                </div>
+
+                <div class="linha2">
+                  <span>Sala 1</span>
+                </div>
+
+                <div class="linha3">
+                  <span>Empresa legal</span>
+                  -
+                  <span>Fulano de Tal</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <span class="material-icons" id="done" (click)="toggleAprovar()"
+                  >done</span
+                >
+                <span
+                  class="material-icons"
+                  id="close"
+                  (click)="toggleReprovar()"
+                  >close</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div (click)="togglePendentes()" class="overlay-more"></div>
+    </ng-container>
+
+    <!-- MODAL MORE APROVADOS -->
+    <ng-container *ngIf="aprovados">
+      <div class="modal-aprovados">
+        <div class="close">
+          <span class="material-icons" (click)="toggleAprovados()">close</span>
+        </div>
+
+        <div class="pendentes">
+          <span class="title">Aprovados</span>
+          <ul class="reservas-pendentes">
+            <li>
+              <div class="content">
+                <div class="linha1">
+                  <span>03/02/2021</span>
+                  -
+                  <span>08:00 às 18:00</span>
+                </div>
+
+                <div class="linha2">
+                  <span>Sala 1</span>
+                </div>
+
+                <div class="linha3">
+                  <span>Empresa legal</span>
+                  -
+                  <span>Fulano de Tal</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <span
+                  class="material-icons"
+                  id="close"
+                  (click)="toggleReprovar()"
+                  >close</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div (click)="toggleAprovados()" class="overlay-more"></div>
+    </ng-container>
+  </nav>
+</body>

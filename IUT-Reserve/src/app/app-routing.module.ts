@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AdmPerfilComponent } from './pages/adm-perfil/adm-perfil.component';
+import { AdmReservasComponent } from './pages/adm-reservas/adm-reservas.component';
+import { AdmSalasComponent } from './pages/adm-salas/adm-salas.component';
+import { AdmUserComponent } from './pages/adm-user/adm-user.component';
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
-import { HomeComponent } from './pages/home/home.component';
-import { ReservasAdmComponent } from './pages/reservas-adm/reservas-adm.component';
-import { AdmUserComponent } from './pages/adm-user/adm-user.component';
-import { AdmperfilComponent } from './pages/admperfil/admperfil.component';
 import { UserperfilComponent } from './pages/userperfil/userperfil.component';
-import { AdmsalasComponent } from './pages/admsalas/admsalas.component';
 import { UpadraoreservasComponent } from './pages/upadraoreservas/upadraoreservas.component';
 
 const routes: Routes = [
+  { path: 'adm-perfil', component: AdmPerfilComponent },
+  { path: 'adm-reservas', component: AdmReservasComponent },
+  { path: 'adm-salas', component: AdmSalasComponent },
+  { path: 'adm-user', component: AdmUserComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'reservas-adm', component: ReservasAdmComponent },
-  { path: 'adm-user', component: AdmUserComponent },
-  { path: 'admperfil', component: AdmperfilComponent },
   { path: 'userperfil', component: UserperfilComponent },
-  { path: 'admsalas', component: AdmsalasComponent },
-  { path: 'upadraoreservas', component: UpadraoreservasComponent},
+  { path: 'upadraoreservas', component: UpadraoreservasComponent },
 ];
 
 @NgModule({

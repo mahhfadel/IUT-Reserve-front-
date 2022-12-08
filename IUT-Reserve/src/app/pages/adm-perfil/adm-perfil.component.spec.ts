@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdmsalasComponent } from './admsalas.component';
+import { AdmPerfilComponent } from './adm-perfil.component';
 
-describe('AdmsalasComponent', () => {
-  let component: AdmsalasComponent;
-  let fixture: ComponentFixture<AdmsalasComponent>;
+describe('AdmPerfilComponent', () => {
+  let component: AdmPerfilComponent;
+  let fixture: ComponentFixture<AdmPerfilComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdmsalasComponent ]
+      declarations: [ AdmPerfilComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdmsalasComponent);
+    fixture = TestBed.createComponent(AdmPerfilComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
